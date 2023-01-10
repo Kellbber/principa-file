@@ -3,17 +3,16 @@ import styles from "../styles/file.module.scss";
 import Icon from "../public/icons/file-icon.svg";
 import Image from "next/image";
 import { useState } from "react";
+import Graphic from "../src/components/Graphic";
 export default function File() {
-  const [csvFile, setCsvFile] = useState<Blob>();
+  const [csvFile, setCsvFile] = useState<any>();
 
   const [array, setArray] = useState<any>();
 
   const submit = () => {
     const file = csvFile;
     const reader = new FileReader();
-    if (file) {
       reader.readAsText(file);
-    }
     reader.onload = function (e: any) {
       const text = e.target.result;
       const result: any = {
@@ -29,7 +28,6 @@ export default function File() {
       setArray(result);
     };
   };
-  console.log(csvFile);
   return (
     <>
       <Head>
@@ -78,6 +76,7 @@ export default function File() {
               <button disabled={true}> Gerar gráfico</button>
             )}
           </div>
+          <Graphic csv={array}/>
         </section>
       </main>
     </>
