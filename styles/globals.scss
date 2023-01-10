@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --blue-000: #0f70b7;
+
+  --blue-900: #7cbdfa;
+
+  --white-000: rgba(255, 255, 255);
+  --white-100: #f8f8f8;
+
+  --green-000: #c2e15c;
+}
+
+body,
+input,
+button {
+  font-family: "Assistant", sans-serif;
+}
