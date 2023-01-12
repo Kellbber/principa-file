@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import styles from "./styles.module.scss";
 import { Chart } from "react-google-charts";
-
+import styles from "../Graphic/styles.module.scss";
 interface Form {
   csv: {
     header: [];
@@ -14,7 +12,7 @@ const Graphic = ({ csv }: Form) => {
   }
 
   const notPayed: any = [];
-  csv.data.map((items: string[], index) => {
+  csv.data.map((items: string[]) => {
     if (items.find((pago) => pago == "aberto\r")) {
       notPayed.push(items);
     }
@@ -35,7 +33,7 @@ const Graphic = ({ csv }: Form) => {
   }
 
   const payed: any = [];
-  csv.data.map((items: string[], index) => {
+  csv.data.map((items: string[]) => {
     if (items.find((pago) => pago == "pago\r")) {
       payed.push(items);
     }
@@ -55,22 +53,50 @@ const Graphic = ({ csv }: Form) => {
     sumPayed += filteredPayed[i];
   }
 
-  let total = ((open + sumPayed) / open) * 1000;
+  let total = open / (open + sumPayed);
   total.toFixed(6);
-  console.log(total);
+
+  const dataAll = [
+    ["Task", "Hours per Day"],
+    ["Pago", sumPayed],
+    ["Aberto", open],
+  ];
+  const optionsAll = {
+    title: "Valores abertos e pagos",
+    colors: ["green", "red"],
+  };
 
   const data = [
-    ["Element", "Valores", { role: "style" }],
-    ["Pago", sumPayed, "green"],
-    ["Aberto", open, "yellow"],
-    ["Inadimplência", total, "red"],
+    ["Element", "Valor", { role: "style" }],
+    ["Inadimplência do ano", total, "rgb(51, 102, 204)"],
   ];
-
+  const options = {
+    title: "Valor total",
+  };
   return (
-    <>
+    <section className={styles.container}>
       <h1>Valores anuais</h1>
-      <Chart chartType="ColumnChart" data={data} width='100%' height="400px" />
-    </>
+      <div className={styles.content}>
+        <div className={styles.secondgraphic}>
+          <Chart
+            chartType="PieChart"
+            data={dataAll}
+            options={optionsAll}
+            width="100%"
+            height="300px"
+          />
+        </div>
+        <div className={styles.firstgraphic}>
+          <Chart
+            chartType="ColumnChart"
+            data={data}
+            options={options}
+            width="100%"
+            height="400px"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 

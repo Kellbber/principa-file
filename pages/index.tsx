@@ -4,6 +4,7 @@ import Icon from "../public/icons/file-icon.svg";
 import Image from "next/image";
 import { useState } from "react";
 import Graphic from "../src/components/Graphic";
+import SelectedGraphic from "../src/components/SelectedGraphic";
 export default function File() {
   const [csvFile, setCsvFile] = useState<any>();
 
@@ -70,13 +71,14 @@ export default function File() {
                   if (csvFile) submit();
                 }}
               >
-                Gerar gráfico{" "}
+                Gerar gráficos{" "}
               </button>
             ) : (
               <button disabled={true}> Gerar gráfico</button>
             )}
           </div>
           <Graphic csv={array}/>
+          <SelectedGraphic csv={array}/>
         </section>
       </main>
     </>

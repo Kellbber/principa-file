@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    select{
+        width: 20%;
+        display: flex;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        border: 2px solid var(--green-000);
+        outline: none;
+
+        font-family: 'Assistant';
+        option{
+            font-weight: 600;
+        }
+    }
+}
+
