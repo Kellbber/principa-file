@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Chart } from "react-google-charts";
 import styles from "../SelectedGraphic/styles.module.scss";
-import { Values } from "../../types/Values";
-import { UniqueValue } from "../../types/UniqueValue";
+
 interface Form {
   csv: {
     header: [];
@@ -448,7 +447,7 @@ const SelectedGraphic = ({ csv }: Form) => {
   const options = {
     title: "Valor total",
   };
-  
+
   return (
     <>
       <section className={styles.container}>
