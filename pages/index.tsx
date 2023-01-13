@@ -32,13 +32,13 @@ export default function File() {
   return (
     <>
       <Head>
-        <title>Princípia</title>
+        <title>Princípia | Graphics</title>
         <meta
           name="description"
           content="conversor de arquivo CSV em matriz para leitura de dados em gráfico"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icons/icon.svg" />
       </Head>
       <main>
         <section className={styles.container}>
