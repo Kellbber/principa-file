@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Graphic from "../src/components/Graphic";
 import SelectedGraphic from "../src/components/SelectedGraphic";
+
 export default function File() {
   const [csvFile, setCsvFile] = useState<any>();
 
@@ -13,7 +14,7 @@ export default function File() {
   const submit = () => {
     const file = csvFile;
     const reader = new FileReader();
-      reader.readAsText(file);
+    reader.readAsText(file);
     reader.onload = function (e: any) {
       const text = e.target.result;
       const result: any = {
@@ -77,8 +78,8 @@ export default function File() {
               <button disabled={true}> Gerar gráfico</button>
             )}
           </div>
-          <Graphic csv={array}/>
-          <SelectedGraphic csv={array}/>
+          <Graphic csv={array} />
+          <SelectedGraphic csv={array} />
         </section>
       </main>
     </>
