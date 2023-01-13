@@ -419,27 +419,36 @@ const SelectedGraphic = ({ csv }: Form) => {
     });
   });
   //
+
+  //soma os pagos
   let payedValue = 0;
   for (let i = 0; i < filteredPay.length; i++) {
     payedValue += filteredPay[i];
   }
   const payed = payedValue;
+  //
 
+  //soma os abertos
   let openValue = 0;
   for (let i = 0; i < filteredOpen.length; i++) {
     openValue += filteredOpen[i];
   }
   const open = openValue;
+  //
 
+  //gera o valor de inadimplencia
   const inadimplence = open / (open + payed);
+  //
 
   const data = [
     ["Element", "Valor", { role: "style" }],
     ["Inadimplência do mês", inadimplence, "rgb(51, 102, 204)"],
   ];
+
   const options = {
     title: "Valor total",
   };
+  
   return (
     <>
       <section className={styles.container}>
