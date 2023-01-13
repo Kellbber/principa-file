@@ -13,7 +13,7 @@ const Graphic = ({ csv }: Form) => {
 
   const notPayed: any = [];
   csv.data.map((items: string[]) => {
-    if (items.find((pago) => pago == "aberto\r")) {
+    if (items.find((pago) => pago == "aberto\r" || pago == "aberto")) {
       notPayed.push(items);
     }
   });
@@ -34,7 +34,7 @@ const Graphic = ({ csv }: Form) => {
 
   const payed: any = [];
   csv.data.map((items: string[]) => {
-    if (items.find((pago) => pago == "pago\r")) {
+    if (items.find((pago) => pago == "pago\r" || pago == "pago")) {
       payed.push(items);
     }
   });
@@ -46,7 +46,6 @@ const Graphic = ({ csv }: Form) => {
       }
     });
   });
-
   let sumPayed = 0;
 
   for (var i = 0; i < filteredPayed.length; i++) {
@@ -57,7 +56,7 @@ const Graphic = ({ csv }: Form) => {
   total.toFixed(6);
 
   const dataAll = [
-    ["Task", "Hours per Day"],
+    ['',''],
     ["Pago", sumPayed],
     ["Aberto", open],
   ];
@@ -75,7 +74,7 @@ const Graphic = ({ csv }: Form) => {
   };
   return (
     <section className={styles.container}>
-      <h1>Valores anuais</h1>
+      <h1>Valor anual</h1>
       <div className={styles.content}>
         <div className={styles.secondgraphic}>
           <Chart
