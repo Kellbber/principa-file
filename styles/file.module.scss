@@ -13,11 +13,21 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+
   h1 {
     font-family: "Assistant";
     font-size: 24px;
     color: var(--blue-000);
     font-weight: 400;
+    @media screen and (max-width: 530px) {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 350px) {
+      font-size: 10px;
+    }
   }
   span {
     font-family: "Assistant";
@@ -25,6 +35,12 @@
     color: var(--green-000);
     font-weight: 800;
     margin-left: 0.5rem;
+    @media screen and (max-width: 530px) {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 350px) {
+      font-size: 10px;
+    }
   }
   strong {
     font-family: "Assistant";
@@ -32,6 +48,12 @@
     color: var(--blue-000);
     font-weight: 400;
     margin-left: 0.2rem;
+    @media screen and (max-width: 530px) {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 350px) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -83,4 +105,3 @@
     cursor: not-allowed;
   }
 }
-
