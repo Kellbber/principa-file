@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Graphic from "../src/components/Graphic";
 import SelectedGraphic from "../src/components/SelectedGraphic";
+import Warning from "../src/components/Warning";
 
 export default function File() {
   const [csvFile, setCsvFile] = useState<any>();
@@ -48,6 +49,7 @@ export default function File() {
             <span>rápida</span>
             <strong>!</strong>
           </div>
+          {!csvFile && <Warning />}
           <div className={styles.input}>
             <Image
               src={Icon}
@@ -65,6 +67,7 @@ export default function File() {
                 setCsvFile(e.target.files[0]);
               }}
             />
+
             {csvFile ? (
               <button
                 onClick={(e) => {
