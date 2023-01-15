@@ -76,11 +76,11 @@
     border: transparent;
     cursor: pointer;
     padding: 10px 10px;
-   
   }
-  button:disabled{
+  button:disabled {
     background-color: #aaaa;
     color: gray;
     cursor: not-allowed;
+  }
 }
-}
+

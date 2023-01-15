@@ -1,5 +1,6 @@
 import { Chart } from "react-google-charts";
 import styles from "../Graphic/styles.module.scss";
+import Swal from "sweetalert2";
 interface Form {
   csv: {
     header: [];
@@ -56,7 +57,7 @@ const Graphic = ({ csv }: Form) => {
   total.toFixed(6);
 
   const dataAll = [
-    ['',''],
+    ["", ""],
     ["Pago", sumPayed],
     ["Aberto", open],
   ];

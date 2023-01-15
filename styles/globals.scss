@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #ddd;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue-900);
 }
 :root {
   --blue-000: #0f70b7;
