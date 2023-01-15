@@ -1,11 +1,12 @@
 import Head from "next/head";
-import styles from "../styles/file.module.scss";
-import Icon from "../public/icons/file-icon.svg";
 import Image from "next/image";
 import { useState } from "react";
+import Icon from "../public/icons/file-icon.svg";
 import Graphic from "../src/components/Graphic";
 import SelectedGraphic from "../src/components/SelectedGraphic";
+import ViewCsv from "../src/components/ViewCsv";
 import Warning from "../src/components/Warning";
+import styles from "../styles/file.module.scss";
 
 export default function File() {
   const [csvFile, setCsvFile] = useState<any>();
@@ -16,6 +17,7 @@ export default function File() {
     const file = csvFile;
     const reader = new FileReader();
     reader.readAsText(file);
+
     reader.onload = function (e: any) {
       const text = e.target.result;
       const result: any = {
@@ -23,14 +25,17 @@ export default function File() {
         data: [],
       };
       const [header, ...content] = text.split("\n");
+
       result.header = header.split(",");
 
       content.forEach((item: string) => {
         result.data.push(item.split(","));
       });
+
       setArray(result);
     };
   };
+
   return (
     <>
       <Head>
@@ -83,6 +88,7 @@ export default function File() {
           </div>
           <Graphic csv={array} />
           <SelectedGraphic csv={array} />
+          <ViewCsv csv={array} />
         </section>
       </main>
     </>

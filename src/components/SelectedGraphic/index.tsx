@@ -451,7 +451,7 @@ const SelectedGraphic = ({ csv }: Form) => {
   return (
     <>
       <section className={styles.container}>
-        <h1>selecione um mês para consultar</h1>
+        <h1>Selecione um mês para consultar</h1>
         <select
           name="select"
           id="select"
