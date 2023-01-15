@@ -67,7 +67,15 @@
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
-
+  @media screen and (max-width: 1150px) {
+    width: 60%;
+  }
+  @media screen and (max-width: 750px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 570px) {
+    width: 90%;
+  }
   input[type="file"] {
     display: none;
   }
@@ -83,6 +91,16 @@
     display: block;
     margin-top: 10px;
     cursor: pointer;
+    @media screen and (max-width: 500px) {
+      width: 150px;
+      font-size: 0.7rem;
+      padding: 7px 7px;
+    }
+    @media screen and (max-width: 350px) {
+      width: 100px;
+      font-size: 0.6rem;
+      padding: 5px 5px;
+    }
   }
   button {
     display: block;
@@ -98,6 +116,16 @@
     border: transparent;
     cursor: pointer;
     padding: 10px 10px;
+    @media screen and (max-width: 500px) {
+      width: 20%;
+      padding: 7px 7px;
+      font-size: 0.6rem;
+    }
+    @media screen and (max-width: 350px) {
+
+      font-size: 0.6rem;
+      padding: 5px 5px;
+    }
   }
   button:disabled {
     background-color: #aaaa;
