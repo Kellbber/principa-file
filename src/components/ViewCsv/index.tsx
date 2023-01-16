@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import styles from "../ViewCsv/style.module.scss";
 
 interface Form {
@@ -7,10 +6,7 @@ interface Form {
     data: [];
   };
 }
-interface Data {
-  headers: string[];
-  data: string[][];
-}
+
 const ViewCsv = ({ csv }: Form) => {
   if (!csv) {
     return null;
