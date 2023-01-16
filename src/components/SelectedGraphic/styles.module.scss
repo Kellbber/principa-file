@@ -13,8 +13,10 @@
         padding: 0.5rem;
         border: 2px solid var(--green-000);
         outline: none;
-
         font-family: 'Assistant';
+        @media screen and (max-width: 600px) {
+            width: 40%;
+          }
         option{
             font-weight: 600;
         }
@@ -22,6 +24,9 @@
     h1{
         margin-top: 1rem;
         color: var(--blue-000);
+        @media screen and (max-width: 800px) {
+            font-size: 16px;
+          }
     }
 }
 
@@ -33,4 +38,7 @@
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
     margin-bottom: 1rem;
+    @media screen and (max-width: 800px) {
+       width: 80%;
+      }
 }

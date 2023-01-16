@@ -1,6 +1,5 @@
 import { Chart } from "react-google-charts";
 import styles from "../Graphic/styles.module.scss";
-import Swal from "sweetalert2";
 interface Form {
   csv: {
     header: [];
