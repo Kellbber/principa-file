@@ -62,7 +62,10 @@ export default function File() {
               alt="file-icon"
               style={{ objectFit: "cover" }}
             />
+            {!csvFile?
             <label htmlFor="arquivo">Escolher arquivo</label>
+            : <label className={styles.labelDisabled}>Arquivo selecionado</label>
+              }
             <input
               type="file"
               name="arquivo"

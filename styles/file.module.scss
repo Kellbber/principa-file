@@ -102,6 +102,11 @@
       padding: 5px 5px;
     }
   }
+.labelDisabled{
+  background-color: #ddd;
+  color: gray;
+  cursor: no-drop;
+}
   button {
     display: block;
     width: 25%;
@@ -133,3 +138,4 @@
     cursor: not-allowed;
   }
 }
+
